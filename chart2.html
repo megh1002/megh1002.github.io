@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-587bcc76db782b088ad6127ac829e254"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Total Floors", "type": "nominal"}, "tooltip": [{"field": "Total Floors", "type": "quantitative"}, {"field": "Square Footage", "type": "quantitative"}], "x": {"field": "Total Floors", "type": "ordinal"}, "y": {"field": "Square Footage", "type": "quantitative"}}, "params": [{"name": "param_33", "select": {"type": "interval", "encodings": ["x", "y"]}}, {"name": "param_34", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Average Building Size by Number of Stories", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-587bcc76db782b088ad6127ac829e254": [{"Total Floors": 0, "Square Footage": 130224.375}, {"Total Floors": 1, "Square Footage": 3074.8116448768624}, {"Total Floors": 2, "Square Footage": 16920.26520681265}, {"Total Floors": 3, "Square Footage": 18566.072419106316}, {"Total Floors": 4, "Square Footage": 33527.36543209876}, {"Total Floors": 5, "Square Footage": 52291.06043956044}, {"Total Floors": 6, "Square Footage": 104549.90243902439}, {"Total Floors": 7, "Square Footage": 117401.89830508475}, {"Total Floors": 8, "Square Footage": 207473.39285714287}, {"Total Floors": 9, "Square Footage": 92178.6}, {"Total Floors": 10, "Square Footage": 229512.5}, {"Total Floors": 11, "Square Footage": 171728.25}, {"Total Floors": 12, "Square Footage": 185880.0}, {"Total Floors": 13, "Square Footage": 219369.0}, {"Total Floors": 14, "Square Footage": 285277.75}, {"Total Floors": 15, "Square Footage": 112292.0}, {"Total Floors": 16, "Square Footage": 199638.0}, {"Total Floors": 17, "Square Footage": 228083.0}, {"Total Floors": 18, "Square Footage": 152836.4}, {"Total Floors": 19, "Square Footage": 335247.0}, {"Total Floors": 20, "Square Footage": 49275.0}, {"Total Floors": 21, "Square Footage": 750048.5}, {"Total Floors": 26, "Square Footage": 420367.0}, {"Total Floors": 31, "Square Footage": 275225.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
